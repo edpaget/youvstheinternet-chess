@@ -5,7 +5,17 @@ gem 'rails', '3.2.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'mongo_mapper'
+gem 'bson_ext'
 
+gem 'omniauth-facebook'
+gem 'omniauth-browserid'
+
+group :test do
+  gem 'mocha', :require => false
+  gem 'factory_girl_rails'
+  gem 'capybara'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
