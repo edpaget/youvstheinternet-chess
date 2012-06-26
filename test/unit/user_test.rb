@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   
   test "should not save without an email" do
     user = User.new
@@ -16,6 +13,9 @@ class UserTest < ActiveSupport::TestCase
 
     user = User.create_from_hash( { 'provider' => 'facebook', 'uid' => "somecrazyletters" } )
     assert !user
+  end
+
+  test "should return all games that a user owns where the user has a moves to make" do
   end
 
 end

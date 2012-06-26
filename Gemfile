@@ -11,6 +11,8 @@ gem 'bson_ext'
 gem 'omniauth-facebook'
 gem 'omniauth-browserid'
 
+gem 'chess', :path => "~/Documents/chess-gems/chess-rules/"
+
 group :test do
   gem 'mocha', :require => false
   gem 'factory_girl_rails'

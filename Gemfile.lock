@@ -1,3 +1,8 @@
+PATH
+  remote: ~/Documents/chess-gems/chess-rules/
+  specs:
+    chess (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -167,6 +172,7 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   capybara
+  chess!
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   jquery-rails

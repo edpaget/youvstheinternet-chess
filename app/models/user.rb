@@ -13,4 +13,7 @@ class User
     end
   end
 
+  def moves_to_make
+  end
+
 end
