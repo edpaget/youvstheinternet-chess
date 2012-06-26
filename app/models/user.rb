@@ -13,4 +13,8 @@ class User
     end
   end
 
+  def game_to_move
+    games.select { |game| game.owners_move? }
+  end
+
 end
