@@ -15,7 +15,4 @@ class UserTest < ActiveSupport::TestCase
     assert !user
   end
 
-  test "should return all games that a user owns where the user has a moves to make" do
-  end
-
 end
