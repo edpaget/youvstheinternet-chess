@@ -13,11 +13,22 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test "should find and update game by id and move" do
-    Game.update_by_id_with_move @game.id, 'a7a5'
+    user = FactoryGirl.create(:user)
+    assert_nothing_raised do
+      Game.update_by_id_with_move_and_user @game.id, 'a7a5', user
+    end
   end
 
   test "should return all games that have non-user moves to make" do
+    games = Game.find_internet_moves
+    assert_equal games.first.owner_color, @game.owner_color
   end
 
-
+  test "should return true if it is the owner's turn to move" do
+    assert(!@game.owners_move?)
+    test_game = FactoryGirl.build(:game) do |game| 
+      game.game = Chess::Game.new(:game => [['e2e4', 'c7c5']])
+    end
+    assert test_game.owners_move?
+  end
 end
