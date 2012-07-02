@@ -5,7 +5,7 @@ gem 'rails', '3.2.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mongo_mapper'
+gem 'mongo_mapper', :git => 'git://github.com/jnunemaker/mongomapper.git', :ref => '4d35c6704a9'
 gem 'bson_ext'
 
 gem 'omniauth-facebook'
@@ -13,10 +13,12 @@ gem 'omniauth-browserid'
 
 gem 'chess', :path => "~/Documents/chess-gems/chess-rules/"
 
-group :test do
+group :development, :test do
   gem 'mocha', :require => false
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'jasmine'
+  gem 'jasminerice'
 end
 
 # Gems used only for assets and not required
@@ -32,12 +34,15 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
+gem 'underscore-rails'
+gem 'backbone-on-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'

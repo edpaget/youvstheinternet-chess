@@ -22,12 +22,17 @@ class Game
     game.save!
   end
 
+  def self.from_params(params)
+    create!(:owner_color => params['owner_color'],
+            :game => Chess::Game.new,
+            :owner_move => (params['owner_color'] == 'white'))
+  end
+
   def self.find_internet_moves
     where( :owner_move => false )
   end
 
   def owners_move?
-    puts game.to_move
     owner_color == game.to_move
   end
 end

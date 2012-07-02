@@ -6,6 +6,13 @@ class GameTest < ActiveSupport::TestCase
     @game = FactoryGirl.create(:game)
   end
 
+  test "should create a new game from the params hash" do
+    params = Hash.new
+    params['owner_color'] = 'black'
+    game = Game.from_params params
+    assert_equal 'black', game.owner_color
+  end
+
   test "should update or throw error if non-legal move" do
     assert_nothing_raised do
       @game.make_move 'a7a5' 
@@ -31,4 +38,5 @@ class GameTest < ActiveSupport::TestCase
     end
     assert test_game.owners_move?
   end
+
 end
