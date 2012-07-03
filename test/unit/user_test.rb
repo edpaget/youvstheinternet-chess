@@ -15,12 +15,4 @@ class UserTest < ActiveSupport::TestCase
     assert !user
   end
 
-  test "should return games to move for a given user id" do
-    user = FactoryGirl.create(:user)
-    user.games.push FactoryGirl.create(:game, :owner_color => 'black')
-    game = User.moves_for_user_id user.id
-    assert_equal game, user.games
-  end
-
-
 end

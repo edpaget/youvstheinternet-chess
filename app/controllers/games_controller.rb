@@ -1,10 +1,13 @@
-
 class GamesController < ApplicationController
+  before_filter :current_user
+
   def index
-    if session[:net_move]
+    puts session[:user_id]
+    if @current_user || session[:net_move]
       @games = Game.find_internet_moves
     elsif @current_user
-      @games = User.moves_for_user_id @current_user
+      puts 'here'
+      @games = @current_user.games_to_move
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -29,8 +32,8 @@ class GamesController < ApplicationController
   def show
     @game = Game.find_by_id(params[:id])
     respond_to do |format|
-      format.html # game.html.erb
-      format.json # game.json.jbuilder
+      format.html # show.html.erb
+      format.json # show.json.jbuilder
     end
   end
 end

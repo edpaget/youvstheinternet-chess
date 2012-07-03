@@ -17,8 +17,4 @@ class User
     games.select { |game| game.owners_move? }
   end
 
-  def self.moves_for_user_id(id)
-    user = find_by_id id
-    user.games_to_move
-  end
 end

@@ -19,7 +19,7 @@ class Game
     if user != game.user
       game.internet_players << user
     end
-    game.save!
+    return game if game.save!
   end
 
   def self.from_params(params)
