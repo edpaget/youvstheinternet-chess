@@ -1,8 +1,6 @@
 class GamesController < ApplicationController
-  before_filter :current_user
 
   def index
-    puts session[:user_id]
     if @current_user || session[:net_move]
       @games = Game.find_internet_moves
     elsif @current_user
