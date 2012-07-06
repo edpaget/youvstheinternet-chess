@@ -1,0 +1,9 @@
+<table id="chess_board">
+  <% _.each(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], function(rank) { %>
+  <tr class="<%= rank %>"> 
+    <% _.each([1, 2, 3, 4, 5, 6, 7, 8,], function(file) { %>
+    <td class="<%= file %>"></td>
+    <% }); %>
+  </tr>
+  <% }); %>
+</table>
