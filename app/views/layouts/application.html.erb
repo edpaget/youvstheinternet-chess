@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WebChess</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>WebChess</title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
-<div class="row">
-  <div class="span8">
-    <h1>You vs. The Internet - Chess<small>Something Witty</small></h1>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">
+          Chess vs. The Internet
+        </a>
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          <li class="active" ><a href="#">Game</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Leader Board</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <% if current_user %>
+            <li><a href="#">Log-out</a></li>
+          <% else %>
+            <li><a class="pull-right"  href="/auth/browser_id/">Login with BrowserID</a></li>
+            <li><a class="pull-right" href="/auth/facebook/">Log with Facebook</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
-  <%= yield %>
+
+  <div class="row">
+    <div class="span3">
+    </div>
+    <div class="span9">
+      <%= yield %>
+    </div>
+  </div>
 </div>
 
 </body>
