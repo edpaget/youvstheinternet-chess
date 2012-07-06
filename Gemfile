@@ -11,7 +11,7 @@ gem 'bson_ext'
 gem 'omniauth-facebook'
 gem 'omniauth-browserid'
 
-gem 'chess', :path => "~/Documents/chess-gems/chess-rules/"
+gem 'chess', :git => 'git://github.com/edpaget/chess-rules.git'
 
 group :development, :test do
   gem 'mocha', :require => false
@@ -19,6 +19,9 @@ group :development, :test do
   gem 'capybara'
   gem 'jasmine'
   gem 'jasminerice'
+
+  gem 'guard'
+  gem 'guard-jasmine'
 end
 
 # Gems used only for assets and not required
