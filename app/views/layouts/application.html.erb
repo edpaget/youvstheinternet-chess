@@ -19,12 +19,15 @@
           <li class="active" ><a href="#">Game</a></li>
           <li><a href="#">Profile</a></li>
           <li><a href="#">Leader Board</a></li>
+          <li class="divider-vertical"></li>
         </ul>
         <ul class="nav pull-right">
+            <li class="divider-vertical"></li>
           <% if current_user %>
             <li><a href="#">Log-out</a></li>
           <% else %>
             <li><a class="pull-right"  href="/auth/browser_id/">Login with BrowserID</a></li>
+            <li class="divider-vertical"></li>
             <li><a class="pull-right" href="/auth/facebook/">Log with Facebook</a></li>
           <% end %>
         </ul>
@@ -37,6 +40,11 @@
     </div>
     <div class="span9">
       <%= yield %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <p>Footer</p>
     </div>
   </div>
 </div>
