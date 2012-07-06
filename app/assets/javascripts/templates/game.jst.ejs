@@ -1,0 +1,6 @@
+<div id="chess_board">
+  <% _.each(['1', '2', '3', '4', '5', '6', '7', '8'], function(rank) {
+      _.each(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], function(file) { %>
+  <div id="<%= file %><%= rank %>"></div>
+  <% }); }); %>
+</table>

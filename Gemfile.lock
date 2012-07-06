@@ -248,6 +248,7 @@ DEPENDENCIES
   capybara
   chess!
   coffee-rails (~> 3.2.1)
+  ejs
   factory_girl_rails
   guard
   guard-jasmine
