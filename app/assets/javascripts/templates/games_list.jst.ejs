@@ -1,0 +1,17 @@
+<table class="table-striped">
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Your Color</th>
+      <th>Last Opponent</th>
+    </tr>
+  <tbody>
+    <% _.each(games, function(game) { %>
+      <tr>
+        <td><a href='#games/<%= game.id %>Game #<%= game.id %></a></td>
+        <td><% if game.color === 'white' { print('&#9812;'); } else { print('&#9818;'); } %></td>
+        <td>game.get('lastPlayer').name</td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

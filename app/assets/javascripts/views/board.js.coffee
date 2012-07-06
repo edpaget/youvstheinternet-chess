@@ -11,7 +11,7 @@ class WebChess.Views.Board extends Backbone.View
   placePieces: ->
     if @game.hasChanged
       @game.fetch
-    this.setPiece piece for piece in @game.board
+    this.setPiece piece for piece in @game.get('board')
 
   setPiece: (piece) ->
     square = "#" + piece.square
@@ -24,7 +24,8 @@ class WebChess.Views.Board extends Backbone.View
       when 'Rook'  then pieceCode = 9814
       when 'Pawn' then pieceCode = 9817
 
-    if piece.color == 'black' then pieceCode + 6
+    if piece.color == 'black' then pieceCode = pieceCode + 6
+    if piece.color == 'black' then console.log pieceCode
     pieceCode = "&#" + pieceCode + ";"
 
-    $(@el).find(square).text pieceCode
+    $(@el).find(square).append "<p>" + pieceCode + "</p>"

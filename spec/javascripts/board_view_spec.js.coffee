@@ -7,8 +7,8 @@ describe "WebChess.Views.Board", ->
     expect(board).not.toBeNull
       
   beforeEach ->
-    @game = 
-      board: [ {piece: 'King', color: 'white', square: 'e2' } ]
+    @game = new WebChess.Models.Game { board: [ {piece: 'King', color: 'white', square: 'e2' },
+                                                {piece: 'King', color: 'black', square: 'e8' } ]}
 
     @board = new WebChess.Views.Board({ game: @game })
     @template = @board.render()
@@ -21,4 +21,7 @@ describe "WebChess.Views.Board", ->
 
     it 'should place pieces', ->
       div = $(@board.el).find('#e2')
-      expect(div.text()).toBe "&#9812;"
+      expect(div.text()).toBe "♔"
+      div = $(@board.el).find('#e8')
+      expect(div.text()).toBe "♚"
+
